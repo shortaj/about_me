@@ -5,7 +5,6 @@ var question2Answer;
 var question3Answer;
 var question4Answer;
 var question5Answer;
-var questionArrayAnswers = [question1Answer, question2Answer, question3Answer, question4Answer, question5Answer];
 var score = 0;
 var invalids= 0;
 
@@ -64,20 +63,21 @@ if (question5Answer === 'y' || question5Answer === 'yes') {
 }
 
 switch (invalids) {
-  case invalids === 1:
+  case 1:
     console.log('Just one mistake. I get it. It\'s cool have a point on me.');
     score++;
     break;
-  case invalids === 2:
+  case 2:
     console.log('Couple mistakes no biggie!');
     break;
-  case invalids === 3:
+  case 3:
     console.log('Really? At this point I am suprised you did not just blerg the flerg.');
     break;
-  case invalids === 4:
+  case 4:
     console.log('Either you can\'t read, your curious, or dislike playing by the rules.');
     break;
-  case invalids === 5:
+  case 5:
+    var questionArrayAnswers = [question1Answer, question2Answer, question3Answer, question4Answer, question5Answer];
     for (var i = 0; i <= 5; i++) {
       console.log(questionArrayAnswers[i]);
     }
@@ -93,7 +93,7 @@ if (score === 5) {
   console.log('Congratz you got 100%!! It\'s like you already know me.');
 } else if (score >= 3) {
   console.log(score + '/5 isn\'t too bad! Thanks for playing.');
-} else if (score === -9000) {
+} else if (score === -9999) {
   console.log('Your score is ' + score + ', I hope you are happy!');
 } else {
   console.log('Thanks for trying!');
