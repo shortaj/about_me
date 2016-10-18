@@ -2,6 +2,6 @@ h1 {
   font-family: Impact;
 }
 p.questions {
-  border: 2px;
+  border-bottom: 2px #000000;
   font-family: sans-serif;
 }
