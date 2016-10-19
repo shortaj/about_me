@@ -6,7 +6,7 @@ var question3Answer;
 var question4Answer;
 var question5Answer;
 var score = 0;
-var invalids= 0;
+var invalids = 0;
 
 alert('Here\'s a Guessing Game about me. Hope you enjoy. Yes or no answers... although y or n will work in a pinch.');
 
@@ -63,28 +63,28 @@ if (question5Answer === 'y' || question5Answer === 'yes') {
 }
 
 switch (invalids) {
-  case 1:
-    console.log('Just one mistake. I get it. It\'s cool have a point on me.');
-    score++;
-    break;
-  case 2:
-    console.log('Couple mistakes no biggie!');
-    break;
-  case 3:
-    console.log('Really? At this point I am suprised you did not just blerg the flerg.');
-    break;
-  case 4:
-    console.log('Either you can\'t read, your curious, or dislike playing by the rules.');
-    break;
-  case 5:
-    var questionArrayAnswers = [question1Answer, question2Answer, question3Answer, question4Answer, question5Answer];
-    for (var i = 0; i <= 5; i++) {
-      console.log(questionArrayAnswers[i]);
-    }
-    console.log('Welp are you happy with your work? Smart ass.');
-    score = -9999;
-    break;
-  default:
+case 1:
+  console.log('Just one mistake. I get it. It\'s cool have a point on me.');
+  score++;
+  break;
+case 2:
+  console.log('Couple mistakes no biggie!');
+  break;
+case 3:
+  console.log('Really? At this point I am suprised you did not just blerg the flerg.');
+  break;
+case 4:
+  console.log('Either you can\'t read, your curious, or dislike playing by the rules.');
+  break;
+case 5:
+  var questionArrayAnswers = [question1Answer, question2Answer, question3Answer, question4Answer, question5Answer];
+  for (var i = 0; i <= 5; i++) {
+    console.log(questionArrayAnswers[i]);
+  }
+  console.log('Welp are you happy with your work? Smart ass.');
+  score = -9999;
+  break;
+default:
   console.log('You have finished the test!');
 
 }
