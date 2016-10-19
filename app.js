@@ -7,58 +7,71 @@ var question4Answer;
 var question5Answer;
 var score = 0;
 var invalids = 0;
+var invalidAnswer = alert('Yes or no answers please.');
+var alertRight = alert('CORRECT!');
+var alertWrong = alert('WRONG!');
 
 alert('Here\'s a Guessing Game about me. Hope you enjoy. Yes or no answers... although y or n will work in a pinch.');
 
-question1Answer = prompt('Do I speak more than one language?').toLowerCase();
-if (question1Answer === 'y' || question1Answer === 'yes') {
-  console.log('Correct! I can speak Japanese as a high school exchange student and have traveled to Japan 5 times now.');
+question1Answer = prompt('Do I speak more than one language?');
+if (question1Answer.toLowerCase() === 'y' || question1Answer.toLowerCase() === 'yes') {
+  alertRight;
+  console.log('Correct! I can speak Japanese. As a high school exchange student and have traveled to Japan 5 times now.');
   score++;
-} else if (question1Answer === 'n' || question1Answer === 'no') {
+} else if (question1Answer.toLowerCase() === 'n' || question1Answer.toLowerCase() === 'no') {
+  alertWrong;
   console.log('Sorry, wrong. I speak Japanese. Not much use for it sadly besides my anime.');
 } else {
-  console.log('Yes or no answers please.');
+  invalidAnswer;
   invalids++;
 }
 
-question2Answer = prompt('Do I know how to fly a biplane?').toLowerCase();
-if (question2Answer === 'y' || question2Answer === 'yes') {
+question2Answer = prompt('Do I know how to fly a biplane?');
+if (question2Answer.toLowerCase() === 'y' || question2Answer.toLowerCase() === 'yes') {
+  alertWrong;
   console.log('Nope, that is incorrect. I wish.');
-} else if (question2Answer === 'n' || question2Answer === 'no') {
+} else if (question2Answer.toLowerCase() === 'n' || question2Answer.toLowerCase() === 'no') {
+  alertRight;
   console.log('Hooray! Correct! Do not trust me to fly a plane!');
   score++;
 } else {
-  console.log('Yes or no answers please.');
+  invalidAnswer;
   invalids++;
 }
-question3Answer = prompt('Do I know how to herd cattle on a motorbike?').toLowerCase();
-if (question3Answer === 'y' || question3Answer === 'yes') {
+question3Answer = prompt('Do I know how to herd cattle on a motorbike?');
+if (question3Answer.toLowerCase() === 'y' || question3Answer.toLowerCase() === 'yes') {
+  alertRight;
   console.log('Good job, that is correct. It is a bunch of fun but reaaaaally dangerous.');
   score++;
-} else if (question3Answer === 'n' || question3Answer === 'no') {
+} else if (question3Answer.toLowerCase() === 'n' || question3Answer.toLowerCase() === 'no') {
+  alertWrong;
   console.log('Bummer, that is wrong. I have done that alot!');
 } else {
-  console.log('Yes or no answers please.');
+  invalidAnswer;
   invalids++;
 }
-question4Answer = prompt('Do I know how to ride a unicycle?').toLowerCase();
-if (question4Answer === 'y' || question4Answer === 'yes') {
+question4Answer = prompt('Do I know how to ride a unicycle?');
+if (question4Answer.toLowerCase() === 'y' || question4Answer.toLowerCase() === 'yes') {
+  alertWrong;
   console.log('Nope, incorrect. I am flattered you think I would be so coordinated.');
-} else if (question4Answer === 'n' || question4Answer === 'no') {
+} else if (question4Answer.toLowerCase() === 'n' || question4Answer.toLowerCase() === 'no') {
+  alertRight;
   console.log('Yep. It is beyond me at the moment and I have no current intentions of learning.');
   score++;
 } else {
-  console.log('Yes or no answers please.');
+  invalidAnswer;
   invalids++;
 }
-question5Answer = prompt('Do I know critical strike range of a longsword and its multiplier off the top of my head?').toLowerCase();
-if (question5Answer === 'y' || question5Answer === 'yes') {
+question5Answer = prompt('Do I know critical strike range of a longsword and its multiplier off the top of my head?');
+if (question5Answer.toLowerCase() === 'y' || question5Answer.toLowerCase() === 'yes') {
+  alertRight;
   console.log('You can bet your bottom dollar that is correct.');
   score++;
-} else if (question5Answer === 'n' || question5Answer === 'no') {
+} else if (question5Answer.toLowerCase() === 'n' || question5Answer.toLowerCase() === 'no') {
+  alertWrong;
   console.log('Wrong! I did say that I was into DnD. 1d8 18/20 x2');
 } else {
-  console.log('Yes or no answers please.');
+  invalidAnswer;
   invalids++;
 }
 
