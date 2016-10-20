@@ -5,32 +5,39 @@ var alertRight = alert('CORRECT!');
 var alertWrong = alert('WRONG!');
 var score = 0;
 var invalids = 0;
+var i = 0
 var invalidAnswer = alert('Yes or no answers please.');
 var questionArray = ['Do I speak more than one language?', 'Do I know how to fly a biplane?', 'Do I know how to herd cattle on a motorbike?', 'Do I know how to ride a unicycle?', 'Do I know critical strike range of a longsword and its multiplier off the top of my head?'];
 var correctResponseArray = ['Correct! I can speak Japanese. As a high school exchange student and have traveled to Japan 5 times now.', 'Hooray! Correct! Do not trust me to fly a plane!', 'Good job, that is correct. It is a bunch of fun but reaaaaally dangerous.', 'Yep. It is beyond me at the moment and I have no current intentions of learning.', 'You can bet your bottom dollar that is correct.'];
 var incorrectResponseArray = ['Sorry, wrong. I speak Japanese. Not much use for it sadly besides my anime.', 'Nope, that is incorrect. I wish.', 'Bummer, that is wrong. I have done that alot!', 'Yep. It is beyond me at the moment and I have no current intentions of learning.', 'Wrong! I did say that I was into DnD. 1d8 18/20 x2'];
-
+var userAnswer;
+var userAnswerArray = [];
 
 var correct = function() {
   alertRight;
+  console.log(correctResponseArray[i]);
   score++;
+  i++;
 }
 var incorrect = function() {
   alertWrong;
+  console.log(incorrectResponseArray[i]);
+  i++;
 }
-var guessingGame = {'Wrong! I did say that I was into DnD. 1d8 18/20 x2'
+var error = function() {
+  invalidAnswer;
+  invalids++;
+}
+var guessingGame = {
   answer1: function(){
-    var question1Answer = prompt(questionArray[0]);
-    if (question1Answer.toLowerCase() === 'y' || question1Answer.toLowerCase() === 'yes') {
-      alertRight;
-      console.log('Correct! I can speak Japanese. As a high school exchange student and have traveled to Japan 5 times now.');
-      score++;
-    } else if (question1Answer.toLowerCase() === 'n' || question1Answer.toLowerCase() === 'no') {
-      alertWrong;
-      console.log('Sorry, wrong. I speak Japanese. Not much use for it sadly besides my anime.');
+    userAnswer = prompt(questionArray[i]);
+    userAnswerArray.push(userAnswer);
+    if (userAnswer.toLowerCase() === 'y' || userAnswer.toLowerCase() === 'yes') {
+      correct;
+    } else if (userAnswer.toLowerCase() === 'n' || userAnswer.toLowerCase() === 'no') {
+      incorrect;
     } else {
-      invalidAnswer;
-      invalids++;
+      error;
     }
   },
   answer2: '',
