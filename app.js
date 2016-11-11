@@ -1,110 +1,163 @@
 'use strict';
 
-var score = 0;
-var invalids = 0;
-var i = 0;
-var questionArray = ['Do I speak more than one language?', 'Do I know how to fly a biplane?', 'Do I know how to herd cattle on a motorbike?', 'Do I know how to ride a unicycle?', 'Do I know critical strike range of a longsword, its multiplier, and damage off the top of my head?','What is my favorite number? You will have 4 tries at this.'];
-var correctResponseArray = ['Correct! I can speak Japanese. As a high school exchange student and have traveled to Japan 5 times now.', 'Hooray! Correct! Do not trust me to fly a plane!', 'Good job, that is correct. It is a bunch of fun but reaaaaally dangerous.', 'Yep. It is beyond me at the moment and I have no current intentions of learning.', 'You can bet your bottom dollar that is correct.'];
-var incorrectResponseArray = ['Sorry, wrong. I speak Japanese. Not much use for it sadly besides my anime.', 'Nope, that is incorrect. I wish.', 'Bummer, that is wrong. I have done that alot!', 'Yep. It is beyond me at the moment and I have no current intentions of learning.', 'Wrong! I did say that I was into DnD. 1d8 18/20 x2'];
-var userAnswer;
-var userAnswerArray = [];
-var correct = function(a) {
-  userAnswerArray[i] = a;
-  console.log(correctResponseArray[i]);
-  score++;
-  i++;
-  return alert('CORRECT!');
-};
-var incorrect = function(a) {
-  userAnswerArray[i] = a;
-  console.log(incorrectResponseArray[i]);
-  i++;
-  return alert('WRONG!');
-};
-var error = function(a) {
-  userAnswerArray[i] = a;
-  invalids++;
-  return alert('Yes or no answers please.');
-};
-//var questions
-while (i < 5) {
-  userAnswer = prompt(questionArray[i]);
-  if (userAnswer === null) {
-    alert('Please play the game.');
+var userName = prompt('What\'s your name?');
+alert ('Hi, ' + userName + '! Welcome to my about me page. Let\'s play a guessing game.');
+
+function answers(correctAnswers) {
+
+  correctAnswers = 0;
+
+  var questionsArray = ['Do you think I have a dog?', 'Am I a vegan?', 'Ture or false: I am from Montana.', 'Do you think I\'m an apple person?', 'Do you think I have an Android phone?'];
+  var answersArray = ['Correct! I have a dog named Vincent.', 'You are right!', 'You are correct!', 'True! I am a Windows person.', 'Correct!'];
+  var invalidAnswer = 'I didn\'t understand your answer.';
+  var incorrectAnswersArray = ['False, I have a dog named Vincent.', 'False!', 'Incorrect!', 'False! I prefer Windows.', 'False! I like Android phones.'];
+
+  var isAnswerCorrect = [];
+
+  var correctAnswerFunction function() {
+
+  };
+
+  var incorrectAnswerFunction function () {
+
+  };
+
+
+  var pet = prompt('Do you think I have a dog?').toUpperCase();
+  if (pet === 'YES') {
+    alert('Correct! I have a dog named Vincent.');
+    correctAnswers++;
+    alert('Your score is now ' + correctAnswers + ' out of 7.');
+    console.log(correctAnswers);
+  } else if (pet === 'NO') {
+    alert('False! I have a dog named Vincent.');
   } else {
-    var yes = (userAnswer.toLowerCase() === 'y' || userAnswer.toLowerCase() === 'yes');
-    var no = (userAnswer.toLowerCase() === 'no' || userAnswer.toLowerCase() === 'no');
-    if (i === 0 && yes) {
-      correct(userAnswer);
-    } else if (i === 0 && no) {
-      incorrect(userAnswer);
-    } else if (i === 1 && yes) {
-      incorrect(userAnswer);
-    } else if (i === 1 && no) {
-      correct(userAnswer);
-    } else if (i === 2 && yes) {
-      correct(userAnswer);
-    } else if (i === 2 && no) {
-      incorrect(userAnswer);
-    } else if (i === 3 && yes) {
-      incorrect(userAnswer);
-    } else if (i === 3 && no) {
-      correct(userAnswer);
-    } else if (i === 4 && yes) {
-      correct(userAnswer);
-    } else if (i === 4 && no) {
-      incorrect(userAnswer);
+    alert('I didn\'t understand your answer.');
+    };
+
+    console.log('Do you think I have a dog?');
+    console.log(pet);
+
+    var diet = prompt('Am I a vegan?').toUpperCase();
+    if (diet === 'YES') {
+      alert('You are right!');
+      correctAnswers++;
+      alert('Your score is now ' + correctAnswers + ' out of 7.');
+    } else if (diet === 'NO') {
+      alert('False!');
     } else {
-      error(userAnswer);
+      alert('Your answer didn\'t make sense to me.')
+    };
+
+    console.log('Am I a vegan?')
+    console.log(diet);
+
+    var homeState = prompt('True or false: I am from Montana.').toUpperCase();
+    if (homeState === 'TRUE') {
+      alert('You are correct!');
+      correctAnswers++;
+      alert('Your score is now ' + correctAnswers + ' out of 7.');
+    } else if (homeState === 'FALSE') {
+      alert('Incorrect!');
+    } else {
+      alert('Your answer doesn\'t make sense.');
+    }
+
+    console.log('True or false: I am from Montana.');
+    console.log(homeState);
+
+    var computer = prompt('Do you think I\'m an Apple person?').toUpperCase();
+    if (computer === 'NO') {
+      alert('True! I prefer Windows.');
+      correctAnswers++;
+      alert('Your score is now ' + correctAnswers + ' out of 7.');
+    } else if (computer === 'NO') {
+      alert('False! I am a Windows girl.');
+    } else {
+      alert('I didn\'t quite understand that answer.');
+    }
+
+    console.log('Do you think I\'m an Apple person?');
+    console.log(computer);
+
+    var phone = prompt('Do you think I have an Android phone?').toUpperCase();
+    if (phone === 'NO') {
+      alert('False, I prefer Android phones.');
+    } else if (phone === 'YES') {
+      alert('Correct!');
+      correctAnswers++;
+      alert('Your score is now ' + correctAnswers + ' out of 7.');
+    } else {
+      alert('That answer didn\'t make sense.')
+    }
+
+    console.log('Do you think I have an Android phone?');
+    console.log(phone);
+
+
+
+
+  function numberGuessingGame(){
+    for (var i = 1; i < 5; i++) {
+      var userAnswer = prompt('Let\'s play a number guessing game! What number am I thinking of? You have 4 tries.');
+
+      if (parseInt(userAnswer) === 32 ) {
+        alert('Correct!');
+        alert('You got the right answer!');
+        correctAnswers++;
+        alert('Your final score is ' + correctAnswers + ' out of 7.');
+        break;
+      } else if (parseInt(userAnswer) > 32) {
+        alert('Too high.');
+      } else if (parseInt(userAnswer) < 32){
+        alert('Too low.');
+      }
+      if (i === 4){
+        alert('Bummer! You used up all of your tries. The number was 32. Your score is ' + correctAnswers + ' out of 7.');
+        break;
+        console.log('Final score: ' + correctAnswers);
+      }
+
     }
   }
-}
-while (i < 9) {
-  userAnswerArray[i] = prompt(questionArray[5]);
-  if (parseInt(userAnswerArray[i]) === 42 ) {
-    alert('Correct!!');
-    console.log('You got the right answer!');
-    score++;
-    break;
-  } else if (parseInt(userAnswerArray[i]) > 42) {
-    alert('Too high. This is the ' + (i-4)+ '/4 attempts.');
-    i++;
-  } else if (parseInt(userAnswerArray[i]) < 42){
-    alert('Too low. This is the ' + (i-4)+ '/4 attempts.');
-    i++;
-  } else if (userAnswerArray[i]=== null) {
-    alert('Please play the game.');
-  } else {
-    alert('Numbers please.')
-    i++;
+  numberGuessingGame();
+
+  function countryVisited(){
+    for (var i = 1; i < 7; i++) {
+      var country = prompt('Can you guess a country I have visited?').toUpperCase();
+
+      if (country === 'JAMAICA') {
+        alert('Correct!');
+        alert('Other possible answers include Canada and Mexico.');
+        correctAnswers++;
+        alert('Your final score is ' + correctAnswers + ' out of 7.');
+        break;
+      } else if (country === 'MEXICO') {
+        alert('Correct!');
+        alert('Other possible answers include Canada and Jamaica.');
+        correctAnswers++;
+        alert('Your final score is ' + correctAnswers + ' out of 7.');
+        break;
+      } else if (country === 'CANADA') {
+        alert('Correct!');
+        alert('Other possible answers include Mexico and Jamaica.');
+        correctAnswers++;
+        alert('Your final score is ' + correctAnswers + ' out of 7.');
+        break;
+      } else {
+        alert('Nope, try again.');
+      }
+      if (i === 6){
+        alert('Bummer! You used up all of your tries. Possible answers include Jaimaica, Mexico and Cananda. Your final score is ' + correctAnswers + ' out of 7.');
+        break;
+        console.log('Final score: ' + correctAnswers);
+      }
+
+    }
   }
+  countryVisited();
 }
 
-var finish = function(a) {
-  if (a === 1) {
-    score++;
-    return alert('Just one mistake. I get it. It\'s cool have a point on me.');
-  } else if (a === 2) {
-    return alert('Couple mistakes no biggie!');
-  } else if (a === 3) {
-    return alert('Really? At this point I am suprised you did not just blerg the flerg.');
-  } else if (a === 4) {
-    return alert('Either you can\'t read, your curious, or dislike playing by the rules.');
-  } else if (a >= 5) {
-    for (var k = 0; k <= 5; k++) {
-      console.log(userAnswerArray[k]);
-    }
-    return alert('Welp are you happy with your work?');
-  }
-};
-var tallyUp = function(a) {
-  if (a >= 5) {
-    return alert('Congratz you did great! It\'s like you already know me.');
-  } else if (a >= 3) {
-    return alert(score + '/6 isn\'t too bad! Thanks for playing.');
-  } else {
-    return alert('Thanks for trying!');
-  }
-};
-finish(invalids);
-tallyUp(score);
+
+
+answers();
